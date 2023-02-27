@@ -3,6 +3,7 @@
 #include "ESP_FlexyStepper.h"
 #include "types.h"
 #include <memory>
+#include "MeasurementSystemFsm.h"
 
 class Stepper
 {
@@ -12,15 +13,16 @@ class Stepper
 		CW,
 		CCW
 	};
-	Stepper(double leadInMM);
-	Stepper() = delete;
+	Stepper();
+	void StartService(double leadInMM);
 	
 	__UINT16_TYPE__ GetStepsPerRotation();
 
-	void Move(double distance, Types::LeadscrewMeasurementSystem measurementSystem);
+	void Move(double distance);
+	void Stop();
 
   private:
-	double GetDistanceInMM(double distance, Types::LeadscrewMeasurementSystem system);
+	double GetDistanceInMM(double distance, MeasurementSystem::MeasurementSystemState system);
 	ESP_FlexyStepper stepper;
 
 	__UINT16_TYPE__ stepsPerRotation;

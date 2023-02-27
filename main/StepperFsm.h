@@ -2,41 +2,32 @@
 
 #include "tinyfsm.hpp"
 #include "Stepper.h"
+#include "events.h"
 
-// ----------------------------------------------------------------------------
-// Event declarations
-//
-
-struct StepperMoveEvent : tinyfsm::Event
+namespace StepperFsm
 {
-	//can be negative or positive. Positive moves to the right.
-	double distance;
-};
+	class StepperState
+		: public tinyfsm::Fsm<StepperState>
+	{
+		friend class Fsm;
 
-struct StepperStopEvent : tinyfsm::Event
-{
-};
+	  private:
+		static Stepper zStepper;
 
-class StepperState
-	: public tinyfsm::Fsm<StepperState>
-{
-	friend class Fsm;
+		/* default reaction for unhandled events */
+		void react(tinyfsm::Event const &){};
 
-  private:
+		/* non-virtual declaration: reactions are the same for all states */
+		void react(MoveEvent const & move);
+		void react(StopEvent const &);
 
-	/* default reaction for unhandled events */
-	void react(tinyfsm::Event const &){};
+		virtual void entry(void) = 0; /* pure virtual: enforce implementation in all states */
+		void exit(void){};			  /* no exit actions at all */
 
-	/* non-virtual declaration: reactions are the same for all states */
-	void react(StepperMoveEvent const & move);
-	void react(StepperStopEvent const &);
+	  protected:
+		Stepper::Direction direction;
 
-	virtual void entry(void) = 0; /* pure virtual: enforce implementation in all states */
-	void exit(void){};			  /* no exit actions at all */
-
-  protected:
-	Stepper::Direction direction;
-
-  public:
-	StepperState();
-};
+	  public:
+		StepperState();
+	};
+}

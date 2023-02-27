@@ -1,6 +1,7 @@
 #include "MeasurementSystemFsm.h"
 #include "tinyfsm.hpp"
 #include "config.h"
+#include "events.h"
 
 // ----------------------------------------------------------------------------
 // Motor states
@@ -12,8 +13,7 @@ namespace MeasurementSystem
 	// Base State: default implementations
 	//
 
-	void
-	MeasurementSystemState::react(SwitchToSAEEvent const &)
+	void MeasurementSystemState::react(SwitchToSAEEvent const &)
 	{
 		transit<SAE>();
 	}

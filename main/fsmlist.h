@@ -6,14 +6,26 @@
 #include "StepperFsm.h"
 #include "MeasurementSystemFsm.h"
 
-using stepperFsmList = tinyfsm::FsmList<StepperState, MeasurementSystem::MeasurementSystemState>;
+using stepperFsmList = tinyfsm::FsmList<StepperFsm::StepperState>;
+
+//TODO figure out how to send an event only to stepper and not machine. I'm guessing template a Machine class
+//and use it in place of typename below
+using machineFsmList = tinyfsm::FsmList<MeasurementSystem::MeasurementSystemState>;
 //using machineFSMList = tinyfsm::FsmList<Machine>;
 
-/** dispatch event to both "StepperState" and "MachineState" */
+
 template<typename E>
-void send_event(E const & event)
+void SendStepperEvent(E const & event)
 {
 	stepperFsmList::template dispatch<E>(event);
+}
+
+
+/** dispatch event to both "MachineState" and probably "Display" when I make that fsm*/
+template <typename E>
+void SendMachineEvent(E const &event)
+{
+	machineFsmList::template dispatch<E>(event);
 }
 
 #endif

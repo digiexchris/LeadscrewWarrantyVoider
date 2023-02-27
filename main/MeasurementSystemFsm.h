@@ -1,21 +1,10 @@
 #pragma once
 #include "tinyfsm.hpp"
 #include "config.h"
+#include "events.h"
 
 namespace MeasurementSystem
 {
-	// ----------------------------------------------------------------------------
-	// Event declarations
-	//
-
-	struct SwitchToSAEEvent : tinyfsm::Event
-	{
-	};
-
-	struct SwitchToMetricEvent : tinyfsm::Event
-	{
-	};
-
 	class MeasurementSystemState
 		: public tinyfsm::Fsm<MeasurementSystemState>
 	{

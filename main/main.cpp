@@ -17,10 +17,7 @@
 extern "C" void app_main(void)
 {
 	//TODO move events somewhere common since one event can be used by multiple FSMs.
-	//TODO figure out where to put this where it makes the most sense. I thought StepperFSM, but it can't link there
-	auto zStepper = new Stepper(Util::Convert::LeadInMM());
-	
-	
-	auto stepperFsmList = new tinyfsm::FsmList<StepperState,MeasurementSystem::MeasurementSystemState>;
+
+	auto stepperFsmList = new tinyfsm::FsmList<StepperFsm::StepperState,MeasurementSystem::MeasurementSystemState>;
 	stepperFsmList->start();
 }

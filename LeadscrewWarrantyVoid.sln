@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "LeadscrewWarrantyVoid", "LeadscrewWarrantyVoid.vgdbproj", "{6BCAE8C6-802A-4B42-9419-B18C37565B21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+		Tests (Debug)|VisualGDB = Tests (Debug)|VisualGDB
+		Tests (Release)|VisualGDB = Tests (Release)|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Tests (Debug)|VisualGDB.ActiveCfg = Tests (Debug)|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Tests (Debug)|VisualGDB.Build.0 = Tests (Debug)|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Tests (Release)|VisualGDB.ActiveCfg = Tests (Release)|VisualGDB
+		{6BCAE8C6-802A-4B42-9419-B18C37565B21}.Tests (Release)|VisualGDB.Build.0 = Tests (Release)|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65915FAE-9A97-4796-93DE-C86A2E50C6AE}
+	EndGlobalSection
+EndGlobal

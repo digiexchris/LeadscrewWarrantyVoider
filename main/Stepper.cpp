@@ -35,11 +35,11 @@ void Stepper::Move(double distance)
 		//dunno what to do about this. since it's a move function, maybe squiz this conversion into
 		//move directly
 		distance *= 25.4;
-		stepper.moveRelativeInMillimeters(distance);
+		stepper.setTargetPositionRelativeInMillimeters(distance);
 	}
 	else
 	{
-		stepper.moveRelativeInMillimeters(distance);
+		stepper.setTargetPositionRelativeInMillimeters(distance);
 	}
 }
 

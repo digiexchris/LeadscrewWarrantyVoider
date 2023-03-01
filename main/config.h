@@ -3,7 +3,7 @@
 /*************Machine Configuration *************/
 
 // Stepper driver Pins
-#define Z_STEP_PIN 18
+#define Z_STEP_PIN 19
 #define Z_DIR_PIN 33
 
 // Spindle Encoder pins

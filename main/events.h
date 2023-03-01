@@ -20,6 +20,10 @@ struct SwitchToMetricEvent : tinyfsm::Event
 
 struct MoveEvent : tinyfsm::Event
 {
+	MoveEvent(double distance) 
+	{
+		this->distance = distance;
+	}
 	//can be negative or positive. Positive moves to the right.
 	double distance;
 };
